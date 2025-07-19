@@ -8,7 +8,9 @@
 #include <limits>  // para std::numeric_limits
 
 /*
-    Ask about -Iinclude when compiling
+    TODO
+    - Add interactive loop
+    - Allow additional operators (e.g. Square root)
 */
 
 float calculate(float a, float b, char operation)
