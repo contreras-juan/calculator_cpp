@@ -1,8 +1,13 @@
+CXX = g++-15
+CXXFLAGS = -std=c++17 -Wall -Iinclude
+SOURCES = src/*.cpp main.cpp
+TARGET = bin/calculator
+
 build:
-	g++-15 src/*.cpp main.cpp -o bin/calculator
+	$(CXX) $(CXXFLAGS) $(SOURCES) -o $(TARGET)
 
-run:
-	bin/calculator
+run: build
+	./$(TARGET)
 
-remove:
-	rm ./calculator
+clean:
+	rm -f $(TARGET)
