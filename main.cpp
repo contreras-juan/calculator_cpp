@@ -9,6 +9,7 @@
 
 /*
     Ask about differences between "" and ''
+    Ask about -Iinclude when compiling
 */
 
 float calculate(float a, float b, char operation)
@@ -16,19 +17,16 @@ float calculate(float a, float b, char operation)
     switch(operation){
         case '+':
             return add(a, b);
-            break;
 
         case '-':
             return subtract(a, b);
-            break;
 
         case '*':
             return multiply(a, b);
-            break;
 
         case '/':
             return divide(a, b);
-            break;
+            
         default:
             std::cerr << "Operation not valid! \n";
             return NAN;
