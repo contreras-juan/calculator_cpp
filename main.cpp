@@ -44,21 +44,21 @@ int main()
     std::cout << "Enter first number: ";
     std::cin >> a;
     if (std::cin.fail()) {
-        std::cerr << "Entrada inválida para el primer número.\n";
+        std::cerr << "Invalid entry (first number).\n";
         return 1;
     }
 
     std::cout << "Enter second number: ";
     std::cin >> b;
     if (std::cin.fail()) {
-        std::cerr << "Entrada inválida para el segundo número.\n";
+        std::cerr << "Invalid entry (second number)\n";
         return 1;
     }
 
     std::cout << "Enter operation (+, -, *, /): ";
     std::cin >> operation;
     if (std::cin.fail()) {
-        std::cerr << "Entrada inválida para la operación.\n";
+        std::cerr << "Invalid entry (operation)!\n";
         return 1;
     }
 
