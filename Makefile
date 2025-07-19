@@ -1,8 +1,8 @@
 build:
-	g++-15 src/*.cpp main.cpp -o calculator
+	g++-15 src/*.cpp main.cpp -o bin/calculator
 
 run:
-	./calculator
+	bin/calculator
 
 remove:
 	rm ./calculator
