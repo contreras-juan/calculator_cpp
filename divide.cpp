@@ -1,9 +1,10 @@
 #include "divide.h"
+#include <stdexcept>
 
 float divide(float a, float b)
 {
     if (b == 0){
-        return 1;
+        throw std::runtime_error("Division by 0!");
     } else{
         return a/b;
     }

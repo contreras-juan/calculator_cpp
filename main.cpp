@@ -3,6 +3,29 @@
 #include "multiply.h"
 #include "divide.h"
 #include <iostream>
+#include <stdexcept>
+#include <cmath>
+
+float calculate(float a, float b, char operation)
+{
+    if(operation == '+'){
+        return add(a, b);
+    } else if (operation == '-'){
+        return substract (a, b);
+        } else if (operation == '*'){
+            return multiply(a, b);
+            } else if (operation == '/'){
+                try{
+                    return divide(a, b);
+                } catch (const std::runtime_error& e){
+                    std::cerr << "Error: " << e.what() << '\n';
+                    return NAN;
+                    }
+                    } else {
+                        std::cerr << "Operación no válida.\n";
+                        return NAN;
+                        }
+}
 
 int main()
 {
@@ -19,25 +42,12 @@ int main()
     std::cout << "Enter operation (+, -, *, /): ";
     std::cin >> operation;
 
-    if (operation == '+') {
-        std::cout << add(a, b) << '\n';
-    } else if (operation == '-') {
-        std::cout << substract(a, b) << '\n';
-    } else if (operation == '*') {
-        std::cout << multiply(a, b) << '\n';
-    } else if (operation == '/') {
-        float division {divide(a, b)};
-
-        if(division==0){
-            std::cout << divide(a, b) << '\n';
-        } else if (division == 1){
-            std::cout << "Division by 0 is not defined!";
-        }else{
-            std::cout << "Other kind of issue!";
-        }
-    } else {
-        std::cout << "Operation not valid. Choose from +, -, *, /" << '\n';
-    }
+    try {
+        float result = calculate(a, b, operation);
+        std::cout << a << " " << operation << " " << b << " = " << result << '\n';
+        } catch (const std::runtime_error& e) {
+            std::cerr << "Error: " << e.what() << '\n';
+            }
 
     return 0;
 }
