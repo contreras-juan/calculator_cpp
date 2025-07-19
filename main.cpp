@@ -7,19 +7,31 @@
 #include <cmath>
 #include <limits>  // para std::numeric_limits
 
+/*
+    Ask about differences between "" and ''
+*/
+
 float calculate(float a, float b, char operation)
 {
-    if (operation == '+') {
-        return add(a, b);
-    } else if (operation == '-') {
-        return substract(a, b);
-    } else if (operation == '*') {
-        return multiply(a, b);
-    } else if (operation == '/') {
-        return divide(a, b);  // puede lanzar excepción
-    } else {
-        std::cerr << "Operación no válida.\n";
-        return NAN;
+    switch(operation){
+        case '+':
+            return add(a, b);
+            break;
+
+        case '-':
+            return substract(a, b);
+            break;
+
+        case '*':
+            return multiply(a, b);
+            break;
+
+        case '/':
+            return divide(a, b);
+            break;
+        default:
+            std::cerr << "Operation not valid! \n";
+            return NAN;
     }
 }
 
