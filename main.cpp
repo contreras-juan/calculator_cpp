@@ -1,14 +1,13 @@
-#include "include/add.h"
-#include "include/subtract.h"
-#include "include/multiply.h"
-#include "include/divide.h"
+#include "add.h"
+#include "subtract.h"
+#include "multiply.h"
+#include "divide.h"
 #include <iostream>
 #include <stdexcept>
 #include <cmath>
 #include <limits>  // para std::numeric_limits
 
 /*
-    Ask about differences between "" and ''
     Ask about -Iinclude when compiling
 */
 
