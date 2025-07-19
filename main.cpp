@@ -1,5 +1,5 @@
 #include "add.h"
-#include "substract.h"
+#include "subtract.h"
 #include "multiply.h"
 #include "divide.h"
 #include <iostream>
@@ -19,7 +19,7 @@ float calculate(float a, float b, char operation)
             break;
 
         case '-':
-            return substract(a, b);
+            return subtract(a, b);
             break;
 
         case '*':
