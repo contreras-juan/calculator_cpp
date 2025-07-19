@@ -1,4 +1,4 @@
-#include "divide.h"
+#include "../include/divide.h"
 #include <stdexcept>
 
 float divide(float a, float b)

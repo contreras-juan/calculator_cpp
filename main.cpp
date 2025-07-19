@@ -1,7 +1,7 @@
-#include "add.h"
-#include "subtract.h"
-#include "multiply.h"
-#include "divide.h"
+#include "include/add.h"
+#include "include/subtract.h"
+#include "include/multiply.h"
+#include "include/divide.h"
 #include <iostream>
 #include <stdexcept>
 #include <cmath>
