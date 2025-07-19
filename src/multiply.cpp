@@ -1,4 +1,4 @@
-#include "../include/multiply.h"
+#include "multiply.h"
 
 float multiply(float a, float b)
 {
