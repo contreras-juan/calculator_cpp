@@ -26,7 +26,15 @@ int main()
     } else if (operation == '*') {
         std::cout << multiply(a, b) << '\n';
     } else if (operation == '/') {
-        std::cout << divide(a, b) << '\n';
+        float division {divide(a, b)};
+
+        if(division==0){
+            std::cout << divide(a, b) << '\n';
+        } else if (division == 1){
+            std::cout << "Division by 0 is not defined!";
+        }else{
+            std::cout << "Other kind of issue!";
+        }
     } else {
         std::cout << "Operation not valid. Choose from +, -, *, /" << '\n';
     }
