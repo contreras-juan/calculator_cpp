@@ -2,7 +2,9 @@
 #include <cmath>
 #include <iostream>
 
-double power(double base, double exponent)
-{
-    return std::pow(base, exponent);
+namespace Calculator{
+    double power(double base, double exponent)
+    {
+        return std::pow(base, exponent);
+    }
 }

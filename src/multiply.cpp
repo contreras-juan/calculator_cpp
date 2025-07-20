@@ -1,6 +1,8 @@
 #include "multiply.h"
 
-float multiply(float a, float b)
-{
-    return a*b;
+namespace Calculator{
+    float multiply(float a, float b)
+    {
+        return a*b;
+    }
 }

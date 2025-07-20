@@ -8,29 +8,25 @@
 #include <stdexcept>
 #include <cmath>
 
-double calculate(double a, double b, char operation)
-{
-    switch(operation){
-        case '+':
-            return add(a, b);
+namespace Calculator{
+    double calculate(double a, double b, char operation)
+    {
+        switch(operation){
+            case '+': return add(a, b);
 
-        case '-':
-            return subtract(a, b);
+            case '-': return subtract(a, b);
 
-        case '*':
-            return multiply(a, b);
+            case '*': return multiply(a, b);
 
-        case '/':
-            return divide(a, b);
+            case '/': return divide(a, b);
 
-        case '^':
-            return power(a, b);
+            case '^': return power(a, b);
 
-        case 'r':
-            return radical(a, b);
-            
-        default:
-            std::cerr << "Operation not valid! \n";
-            return NAN;
+            case 'r': return radical(a, b);
+                
+            default: 
+                std::cerr << "Operation not valid! \n";
+                return NAN;
+        }
     }
 }

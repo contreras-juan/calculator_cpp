@@ -1,2 +1,5 @@
 #pragma once
-float divide(float a, float b);
+
+namespace Calculator{
+    float divide(float a, float b);
+}

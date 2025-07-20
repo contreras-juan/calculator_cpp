@@ -4,6 +4,7 @@
 #include <cmath>
 #include <limits> 
 #include <string>
+#include <iomanip>
 
 /*
     TODO
@@ -13,6 +14,8 @@
 int main()
 {
     while (true) {
+        std::cout << std::fixed << std::setprecision(6);
+        
         std::string input;
         double a, b;
         char operation;
@@ -54,7 +57,7 @@ int main()
             }
             
         try {
-            float result = calculate(a, b, operation);
+            float result = Calculator::calculate(a, b, operation);
             if (!std::isnan(result)) {
                 std::cout << a << " " << operation << " " << b << " = " << result << '\n';
                 } else {

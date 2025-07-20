@@ -1,2 +1,5 @@
 #pragma once
-float multiply(float a, float b);
+
+namespace Calculator{
+    float multiply(float a, float b);
+}

@@ -1,2 +1,5 @@
 #pragma once
-double radical(double base, double index);
+
+namespace Calculator{
+    double radical(double base, double index);
+}

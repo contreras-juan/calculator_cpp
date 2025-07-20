@@ -1,2 +1,5 @@
 #pragma once
-double power(double base, double exponent);
+
+namespace Calculator{
+    double power(double base, double exponent);
+}
