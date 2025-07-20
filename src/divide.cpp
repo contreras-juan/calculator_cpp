@@ -2,7 +2,7 @@
 #include <stdexcept>
 
 namespace Calculator{
-    float divide(float a, float b)
+    double divide(double a, double b)
     {
         if (b == 0){
             throw std::runtime_error("Division by 0!");

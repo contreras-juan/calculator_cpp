@@ -1,7 +1,7 @@
 #include "add.h"
 
 namespace Calculator{
-    float add(float a, float b)
+    double add(double a, double b)
     {
         return a + b;
         }

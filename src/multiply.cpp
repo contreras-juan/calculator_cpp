@@ -1,7 +1,7 @@
 #include "multiply.h"
 
 namespace Calculator{
-    float multiply(float a, float b)
+    double multiply(double a, double b)
     {
         return a*b;
     }

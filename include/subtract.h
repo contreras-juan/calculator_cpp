@@ -1,5 +1,5 @@
 #pragma once
 
 namespace Calculator{
-    float subtract(float a, float b);
+    double subtract(double a, double b);
 }
