@@ -2,6 +2,7 @@
 #include "subtract.h"
 #include "multiply.h"
 #include "divide.h"
+#include "power.h"
 #include <iostream>
 #include <stdexcept>
 #include <cmath>
@@ -10,11 +11,10 @@
 
 /*
     TODO
-    - Add interactive loop
     - Allow additional operators (e.g. Square root)
 */
 
-float calculate(float a, float b, char operation)
+float calculate(double a, double b, char operation)
 {
     switch(operation){
         case '+':
@@ -28,6 +28,9 @@ float calculate(float a, float b, char operation)
 
         case '/':
             return divide(a, b);
+
+        case '^':
+            return power(a, b);
             
         default:
             std::cerr << "Operation not valid! \n";
@@ -39,7 +42,7 @@ int main()
 {
     while (true) {
         std::string input;
-        float a, b;
+        double a, b;
         char operation;
         
         std::cout << "Enter first number (or 'q' to quit): ";
@@ -68,7 +71,7 @@ int main()
                 continue;
                 }
                 
-        std::cout << "Enter operation (+, -, *, /): ";
+        std::cout << "Enter operation (+, -, *, /. ^): ";
         std::cin >> operation;
         
         if (std::cin.fail()) {
