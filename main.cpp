@@ -46,7 +46,7 @@ int main()
                 continue;
                 }
                 
-        std::cout << "Enter operation (+, -, *, /. ^): ";
+        std::cout << "Enter operation (+, -, *, /. ^, r): ";
         std::cin >> operation;
         
         if (std::cin.fail()) {
