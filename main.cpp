@@ -1,9 +1,4 @@
-#include "add.h"
-#include "subtract.h"
-#include "multiply.h"
-#include "divide.h"
-#include "power.h"
-#include "radical.h"
+#include "calculate.h"
 #include <iostream>
 #include <stdexcept>
 #include <cmath>
@@ -14,33 +9,6 @@
     TODO
     - Allow additional operators (e.g. Square root)
 */
-
-float calculate(double a, double b, char operation)
-{
-    switch(operation){
-        case '+':
-            return add(a, b);
-
-        case '-':
-            return subtract(a, b);
-
-        case '*':
-            return multiply(a, b);
-
-        case '/':
-            return divide(a, b);
-
-        case '^':
-            return power(a, b);
-
-        case 'r':
-            return radical(a, b);
-            
-        default:
-            std::cerr << "Operation not valid! \n";
-            return NAN;
-    }
-}
 
 int main()
 {
