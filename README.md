@@ -82,6 +82,8 @@ Enter operation (+, -, *, /): +
 | Subtraction | - | Subtracts second number from first |
 | Multiplication | * | Multiplies two numbers |
 | Division | / | Divides first number by second |
+| Power | ^ | Calculate the power of the first number using the second as an exponent |
+| Radical | r | Calculates the radical of the first using the second as a index |
 
 ## Error Handling
 
