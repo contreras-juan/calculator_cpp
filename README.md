@@ -63,14 +63,14 @@ calculator/
 2. Follow the prompts to:
    - Enter the first number
    - Enter the second number
-   - Choose an operation (+, -, *, /)
+   - Choose an operation (+, -, *, /, r)
 
 ### Example Usage
 
 ```
 Enter first number: 10
 Enter second number: 5
-Enter operation (+, -, *, /, r): +
+Enter operation (+, -, *, /, r):
 10 + 5 = 15
 ```
 
