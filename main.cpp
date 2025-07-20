@@ -3,6 +3,7 @@
 #include "multiply.h"
 #include "divide.h"
 #include "power.h"
+#include "radical.h"
 #include <iostream>
 #include <stdexcept>
 #include <cmath>
@@ -31,6 +32,9 @@ float calculate(double a, double b, char operation)
 
         case '^':
             return power(a, b);
+
+        case 'r':
+            return radical(a, b);
             
         default:
             std::cerr << "Operation not valid! \n";
