@@ -17,37 +17,11 @@ int main()
         std::cout << std::fixed << std::setprecision(6);
         
         std::string input;
-        double a, b;
+        double first_digit, second_digit;
         char operation;
         
-        std::cout << "Enter first number (or 'q' to quit): ";
-        
-        std::cin >> input;
-        
-        if (input == "q") {
-            std::cout << "Bye Bye!\n";
-            return 0;
-            }
-            
-        try {
-            a = std::stof(input);
-            } catch (...) {
-                std::cerr << "Invalid input for first number.\n";
-                continue;
-                }
-
-        std::cout << "Enter second number: ";
-        std::cin >> input;
-
-        try {
-            b = std::stof(input);
-            } catch (...) {
-                std::cerr << "Invalid input for second number.\n";
-                continue;
-                }
-                
-        std::cout << "Enter operation (+, -, *, /. ^, r): ";
-        std::cin >> operation;
+        std::cout << "Enter operation:";
+        std::cin >> first_digit >> operation >> second_digit;
         
         if (std::cin.fail()) {
             std::cerr << "Invalid operation.\n";
@@ -57,9 +31,9 @@ int main()
             }
             
         try {
-            float result = Calculator::calculate(a, b, operation);
+            double result = Calculator::calculate(first_digit, second_digit, operation);
             if (!std::isnan(result)) {
-                std::cout << a << " " << operation << " " << b << " = " << result << '\n';
+                std::cout << first_digit << " " << operation << " " << second_digit << " = " << result << '\n';
                 } else {
                     std::cerr << "Error calculating.\n";
                     }
