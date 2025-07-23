@@ -1,4 +1,5 @@
 #include "calculate.h"
+#include "utils.h"
 #include <iostream>
 #include <stdexcept>
 #include <cmath>
@@ -6,26 +7,8 @@
 #include <string>
 #include <iomanip>
 #include <sstream> 
-#include <cctype> 
-
-std::string normalize_expression(const std::string& input) {
-    std::string output;
-    for (size_t i = 0; i < input.length(); ++i) {
-        char c = input[i];
-        if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'r') {
-            // Añadir espacio antes si no hay
-            if (i > 0 && input[i - 1] != ' ')
-                output += ' ';
-            output += c;
-            // Añadir espacio después si no hay
-            if (i + 1 < input.length() && input[i + 1] != ' ')
-                output += ' ';
-        } else {
-            output += c;
-        }
-    }
-    return output;
-}
+#include <cctype>
+#include <regex>
 
 int main()
 {
@@ -41,7 +24,7 @@ int main()
 
         std::cout << "Enter operation (e.g. 3.5 + 2 or 'q' to quit): ";
         std::getline(std::cin, line);
-        line = normalize_expression(line);
+        line = Calculator::normalize_expression(line);
 
 
         if (line == "q" || line == "Q") {
