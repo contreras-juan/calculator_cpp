@@ -4,7 +4,10 @@ A simple command-line calculator written in C++ that performs basic arithmetic o
 
 ## Features
 
-- **Basic Operations**: Addition (+), Subtraction (-), Multiplication (*), Division (/)
+- **Basic Operations**: Addition (+), Subtraction (-), Multiplication (*), Division (/), Power (^), Radical (r)
+- **Result Memory**: Automatically stores the last result in `ans` for reuse
+- **Command 'ans'**: Simply type `ans` to recall the last result
+- **Flexible Input**: Accepts input with or without spaces (e.g., `3+4` or `3 + 4`)
 - **Error Handling**: Input validation and division by zero protection
 - **Modular Design**: Separated header files and implementation files for each operation
 - **Cross-platform**: Works on any system with a C++ compiler
