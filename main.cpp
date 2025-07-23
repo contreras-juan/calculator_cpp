@@ -6,7 +6,7 @@
 #include <limits> 
 #include <string>
 #include <iomanip>
-#include <sstream> 
+#include <sstream>
 #include <cctype>
 #include <regex>
 
@@ -24,12 +24,19 @@ int main()
 
         std::cout << "Enter operation (e.g. 3.5 + 2 or 'q' to quit): ";
         std::getline(std::cin, line);
+
+        // Normaliza la expresión
         line = Calculator::normalize_expression(line);
 
-
+        // Permite consultar solo el valor de "ans"
         if (line == "q" || line == "Q") {
             std::cout << "Bye Bye!\n";
             break;
+        }
+
+        if (line == "ans" || line == "ANS") {
+            std::cout << "ans = " << ans << '\n';
+            continue;
         }
 
         std::istringstream iss(line);
@@ -44,7 +51,6 @@ int main()
             continue;
         }
 
-        // Reemplazo de 'ans' por el último valor
         try {
             a = (a_str == "ans" || a_str == "ANS") ? ans : std::stod(a_str);
             b = (b_str == "ans" || b_str == "ANS") ? ans : std::stod(b_str);
@@ -57,7 +63,7 @@ int main()
             double result = Calculator::calculate(a, b, operation);
             if (!std::isnan(result)) {
                 std::cout << a << " " << operation << " " << b << " = " << result << '\n';
-                ans = result;  // almacena el resultado para la próxima vez
+                ans = result;
             } else {
                 std::cerr << "Calculation error.\n";
             }
