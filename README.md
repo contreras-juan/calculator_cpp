@@ -22,11 +22,19 @@ calculator/
 │   ├── subtract.h
 │   ├── multiply.h
 │   └── divide.h
+|   └── power.h
+|   └── radical.h
+|   └── calculate.h
+|   └── utils.h
 ├── src/           # Source files
 │   ├── add.cpp
 │   ├── subtract.cpp
 │   ├── multiply.cpp
 │   └── divide.cpp
+|   └── power.cpp
+|   └── radical.cpp
+|   └── calculate.cpp
+|   └── utils.cpp
 ├── main.cpp       # Main program file
 ├── Makefile       # Build configuration
 └── README.md      # This file
@@ -63,10 +71,7 @@ calculator/
    ./bin/calculator
    ```
 
-2. Follow the prompts to:
-   - Enter the first number
-   - Enter the second number
-   - Choose an operation (+, -, *, /, r)
+2. Follow the prompts to enter the operation to calculate or quit the interaction.
 
 ### Example Usage
 
@@ -99,10 +104,10 @@ The calculator includes robust error handling for:
 
 ### Adding New Operations
 
-To add new operations (like square root as mentioned in the TODO):
+To add new operations (like log):
 
-1. Create a new header file in `include/` (e.g., `sqrt.h`)
-2. Create the implementation in `src/` (e.g., `sqrt.cpp`)
+1. Create a new header file in `include/` (e.g., `log.h`)
+2. Create the implementation in `src/` (e.g., `log.cpp`)
 3. Include the header in `main.cpp`
 4. Add the case to the `calculate()` function switch statement
 
