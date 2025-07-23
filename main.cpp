@@ -20,7 +20,7 @@ int main()
         double first_digit, second_digit;
         char operation;
 
-        std::cout << "Enter operation (e.g. 3.5 + 2 or 'q' to quit): ";
+        std::cout << "Enter operation (+, -, *, /, r) or press 'q' to quit: ";
         std::getline(std::cin, line);
 
         if (line == "q" || line == "Q") {
