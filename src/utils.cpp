@@ -1,22 +1,22 @@
 #include "utils.h"
 #include <iostream> 
 #include <string>
+#include <regex>
 
-namespace Calculator{
+namespace Calculator {
     std::string normalize_expression(const std::string& input) {
-        std::string output;
-        for (size_t i = 0; i < input.length(); ++i) {
-            char c = input[i];
+        std::string spaced;
+        for (char c : input) {
             if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'r') {
-                if (i > 0 && input[i - 1] != ' ')
-                    output += ' ';
-                output += c;
-                if (i + 1 < input.length() && input[i + 1] != ' ')
-                    output += ' ';
+                spaced += ' ';
+                spaced += c;
+                spaced += ' ';
             } else {
-                output += c;
+                spaced += c;
             }
         }
-        return output;
+
+        // Elimina espacios múltiples
+        return std::regex_replace(spaced, std::regex("\\s+"), " ");
     }
 }
