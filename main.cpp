@@ -5,23 +5,44 @@
 #include <limits> 
 #include <string>
 #include <iomanip>
+#include <sstream> 
+#include <cctype> 
 
-/*
-    TODO
-    - Allow additional operators (e.g. Square root)
-*/
+std::string normalize_expression(const std::string& input) {
+    std::string output;
+    for (size_t i = 0; i < input.length(); ++i) {
+        char c = input[i];
+        if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'r') {
+            // Añadir espacio antes si no hay
+            if (i > 0 && input[i - 1] != ' ')
+                output += ' ';
+            output += c;
+            // Añadir espacio después si no hay
+            if (i + 1 < input.length() && input[i + 1] != ' ')
+                output += ' ';
+        } else {
+            output += c;
+        }
+    }
+    return output;
+}
 
 int main()
 {
+    double ans = 0.0;  // memoria del último resultado
+
     while (true) {
         std::cout << std::fixed << std::setprecision(6);
 
         std::string line;
-        double first_digit, second_digit;
+        std::string a_str, b_str;
+        double a, b;
         char operation;
 
-        std::cout << "Enter operation (+, -, *, /, r) or press 'q' to quit: ";
+        std::cout << "Enter operation (e.g. 3.5 + 2 or 'q' to quit): ";
         std::getline(std::cin, line);
+        line = normalize_expression(line);
+
 
         if (line == "q" || line == "Q") {
             std::cout << "Bye Bye!\n";
@@ -29,22 +50,31 @@ int main()
         }
 
         std::istringstream iss(line);
-        if (!(iss >> first_digit >> operation >> second_digit)) {
-            std::cerr << "Invalid input format. Try again.\n";
+        if (!(iss >> a_str >> operation >> b_str)) {
+            std::cerr << "Invalid input format. Try: <number|ans> <operator> <number|ans>\n";
             continue;
         }
 
-        // Detecta si hay tokens adicionales luego de la operación
         std::string extra;
         if (iss >> extra) {
-            std::cerr << "Too many inputs. Format must be: <number> <operator> <number>\n";
+            std::cerr << "Too many inputs. Use format: <number> <operator> <number>\n";
+            continue;
+        }
+
+        // Reemplazo de 'ans' por el último valor
+        try {
+            a = (a_str == "ans" || a_str == "ANS") ? ans : std::stod(a_str);
+            b = (b_str == "ans" || b_str == "ANS") ? ans : std::stod(b_str);
+        } catch (...) {
+            std::cerr << "Invalid number format.\n";
             continue;
         }
 
         try {
-            double result = Calculator::calculate(first_digit, second_digit, operation);
+            double result = Calculator::calculate(a, b, operation);
             if (!std::isnan(result)) {
-                std::cout << first_digit << " " << operation << " " << second_digit << " = " << result << '\n';
+                std::cout << a << " " << operation << " " << b << " = " << result << '\n';
+                ans = result;  // almacena el resultado para la próxima vez
             } else {
                 std::cerr << "Calculation error.\n";
             }
