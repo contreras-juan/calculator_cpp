@@ -68,10 +68,9 @@ calculator/
 ### Example Usage
 
 ```
-Enter first number: 10
-Enter second number: 5
-Enter operation (+, -, *, /, r):
-10 + 5 = 15
+Enter operation (e.g. 3.5 + 2 or 'q' to quit):
+3.5 + 2
+3.5 + 2 = 5.5
 ```
 
 ## Available Operations
